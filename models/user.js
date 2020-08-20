@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
+      models.user.hasMany(models.workout)
       // define association here
     }
   };
@@ -45,11 +46,11 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'user',
   });
-  
+
   user.addHook('beforeCreate', function(pendingUser) {
     // hash the password for us
      let hash = bcrypt.hashSync(pendingUser.password, 12);
-    // set password to the hash 
+    // set password to the hash
     pendingUser.password = hash;
   });
 
@@ -58,7 +59,7 @@ module.exports = (sequelize, DataTypes) => {
     // return true or false based on correct password
     return correctPassword;
   };
-  
+
   // remove the password before it get serialized (answer when used)
   user.prototype.toJSON = function() {
     let userData = this.get();
