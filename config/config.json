@@ -13,6 +13,6 @@
     "database": "workout_production",
     "host": "127.0.0.1",
     "dialect": "postgres",
-    "use_env_variable": "postgres://kdxlrrchlklsbn:c8be4a944d7610b052414181a9cb73d9d79e236ec1fd3e943703220129d01353@ec2-52-22-94-132.compute-1.amazonaws.com:5432/d2vhg7p5pi22bu"
+    "use_env_variable": "DATABASE_URL"
   }
 }
