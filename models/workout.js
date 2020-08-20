@@ -18,20 +18,21 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     workoutId: DataTypes.INTEGER,
     exerciseName: DataTypes.STRING,
-    set: DataTypes.INTEGER,
-  //   validate: {
-  //     len: {
-  //       args: [1, 99],
-  //       msg: 'Name must be 1 to 99 characters'
-  //     }
-  // },
-    repet: DataTypes.INTEGER,
-  //   validate: {
-  //     len: {
-  //       args: [1, 99],
-  //       msg: 'Name must be 1 to 99 characters'
-  //     }
-  // },
+    set: {
+      type: DataTypes.INTEGER,
+      validate: {
+      min: 1,
+      max: 50
+      }
+    },
+    repet: {
+      type: DataTypes.INTEGER,
+      validate: {
+      min: 1,
+      max: 50
+      }
+    },
+
     category: DataTypes.INTEGER
   }, {
     sequelize,

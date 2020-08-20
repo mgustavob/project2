@@ -27,169 +27,9 @@ router.get('/', (req, res)=> {
     // 0  is exercise, 1 is image
     .then(function(results) {
       const exer = results.map(r => r.data);
-    //   for(let i = 0; i< exer[0].length; i++){
-    //     if (legs.includes(exer[0][i].id)) {
-    //       for (let k = 0; k < exer[1].length; k++) {
-    //         if ((exer[0][i].id == exer[1][k].exercise)) {
-
-    //           let wId = exer[0][i].id;
-    //           let wVal = wLegs.get(wId)
-    //           if (wVal) {
-
-    //             wVal["image"].push(exer[1][k].image);
-
-    //           } else {
-
-    //             let workout = {};
-    //             workout.id = exer[0][i].id;
-    //             workout.name = exer[0][i].name;
-    //             workout.image = [];
-    //             workout.description = exer[0][i].description;
-    //             workout.image.push(exer[1][k].image);
-    //             wLegs.set(exer[0][i].id, workout);
-    //             }
-    //           }
-    //         }
-    //       }
-    //     }
-    //     for(let i = 0; i< exer[0].length; i++){
-    //       if (arms.includes(exer[0][i].id)) {
-    //         for (let k = 0; k < exer[1].length; k++) {
-    //           if ((exer[0][i].id == exer[1][k].exercise)) {
-
-    //             let wId = exer[0][i].id;
-    //             let wVal = wLegs.get(wId)
-    //             if (wVal) {
-
-    //               wVal["image"].push(exer[1][k].image);
-
-    //             } else {
-
-    //               let workout = {};
-    //               workout.id = exer[0][i].id;
-    //               workout.name = exer[0][i].name;
-    //               workout.image = [];
-    //               workout.description = exer[0][i].description;
-    //               workout.image.push(exer[1][k].image);
-    //               wArms.set(exer[0][i].id, workout);
-    //               }
-    //             }
-    //           }
-    //         }
-    //       }
-
-    //   for(let i = 0; i< exer[0].length; i++){
-    //     if (abs.includes(exer[0][i].id)) {
-    //       for (let k = 0; k < exer[1].length; k++) {
-    //         if ((exer[0][i].id == exer[1][k].exercise)) {
-
-    //           let wId = exer[0][i].id;
-    //           let wVal = wLegs.get(wId)
-    //           if (wVal) {
-
-    //             wVal["image"].push(exer[1][k].image);
-
-    //           } else {
-
-    //             let workout = {};
-    //             workout.id = exer[0][i].id;
-    //             workout.name = exer[0][i].name;
-    //             workout.image = [];
-    //             workout.description = exer[0][i].description;
-    //             workout.image.push(exer[1][k].image);
-    //             wAbs.set(exer[0][i].id, workout);
-    //             }
-    //           }
-    //         }
-    //       }
-    //     }
-
-    //     for(let i = 0; i< exer[0].length; i++){
-    //       if (chest.includes(exer[0][i].id)) {
-    //         for (let k = 0; k < exer[1].length; k++) {
-    //           if ((exer[0][i].id == exer[1][k].exercise)) {
-
-    //             let wId = exer[0][i].id;
-    //             let wVal = wLegs.get(wId)
-    //             if (wVal) {
-
-    //               wVal["image"].push(exer[1][k].image);
-
-    //             } else {
-
-    //               let workout = {};
-    //               workout.id = exer[0][i].id;
-    //               workout.name = exer[0][i].name;
-    //               workout.image = [];
-    //               workout.description = exer[0][i].description;
-    //               workout.image.push(exer[1][k].image);
-    //               wChest.set(exer[0][i].id, workout);
-    //               }
-    //             }
-    //           }
-    //         }
-    //       }
-
-    //   for(let i = 0; i< exer[0].length; i++){
-    //     if (back.includes(exer[0][i].id)) {
-    //       for (let k = 0; k < exer[1].length; k++) {
-    //         if ((exer[0][i].id == exer[1][k].exercise)) {
-    //           let wId = exer[0][i].id;
-    //           let wVal = wLegs.get(wId)
-    //               if (wVal) {
-
-    //                 wVal["image"].push(exer[1][k].image);
-
-    //               } else {
-
-    //                 let workout = {};
-    //                 workout.id = exer[0][i].id;
-    //                 workout.name = exer[0][i].name;
-    //                 workout.image = [];
-    //                 workout.description = exer[0][i].description;
-    //                 workout.image.push(exer[1][k].image);
-    //                 wBack.set(exer[0][i].id, workout);
-    //                 }
-    //               }
-    //             }
-    //           }
-    //         }
-
-    //         for(let i = 0; i< exer[0].length; i++){
-    //           if (shoulders.includes(exer[0][i].id)) {
-    //             for (let k = 0; k < exer[1].length; k++) {
-    //               if ((exer[0][i].id == exer[1][k].exercise)) {
-
-    //                 let wId = exer[0][i].id;
-    //                 let wVal = wLegs.get(wId)
-    //                 if (wVal) {
-
-    //                   wVal["image"].push(exer[1][k].image);
-
-    //                 } else {
-
-    //                   let workout = {};
-    //                   workout.id = exer[0][i].id;
-    //                   workout.name = exer[0][i].name;
-    //                   workout.image = [];
-    //                   workout.description = exer[0][i].description;
-    //                   workout.image.push(exer[1][k].image);
-    //                   wShoulders.set(exer[0][i].id, workout);
-    //                   }
-    //                 }
-    //               }
-    //             }
-    //           }
-
-    //           console.log(wLegs(1));
-            //   console.log(wArms);
-            //   console.log(wAbs);
-            //   console.log(wChest);
-            //   console.log(wBack);
-            //   console.log(wShoulders);
 
 
-    res.render('exercisecategory', { exer })
+      res.render('exercisecategory', { exer })
 
 
     })
@@ -222,7 +62,7 @@ router.get('/list/:id', (req, res)=>{
     })
 
 
-        // axios.all(promiseArray)
+    // axios.all(promiseArray)
         // // 0  is exercise, 1 is image
         // .then(function(results) {
         //   const exer = results.map(r => r.data);
@@ -230,3 +70,164 @@ router.get('/list/:id', (req, res)=>{
 })
 
 module.exports = router;
+
+//   for(let i = 0; i< exer[0].length; i++){
+//     if (legs.includes(exer[0][i].id)) {
+//       for (let k = 0; k < exer[1].length; k++) {
+//         if ((exer[0][i].id == exer[1][k].exercise)) {
+
+//           let wId = exer[0][i].id;
+//           let wVal = wLegs.get(wId)
+//           if (wVal) {
+
+//             wVal["image"].push(exer[1][k].image);
+
+//           } else {
+
+//             let workout = {};
+//             workout.id = exer[0][i].id;
+//             workout.name = exer[0][i].name;
+//             workout.image = [];
+//             workout.description = exer[0][i].description;
+//             workout.image.push(exer[1][k].image);
+//             wLegs.set(exer[0][i].id, workout);
+//             }
+//           }
+//         }
+//       }
+//     }
+//     for(let i = 0; i< exer[0].length; i++){
+//       if (arms.includes(exer[0][i].id)) {
+//         for (let k = 0; k < exer[1].length; k++) {
+//           if ((exer[0][i].id == exer[1][k].exercise)) {
+
+//             let wId = exer[0][i].id;
+//             let wVal = wLegs.get(wId)
+//             if (wVal) {
+
+//               wVal["image"].push(exer[1][k].image);
+
+//             } else {
+
+//               let workout = {};
+//               workout.id = exer[0][i].id;
+//               workout.name = exer[0][i].name;
+//               workout.image = [];
+//               workout.description = exer[0][i].description;
+//               workout.image.push(exer[1][k].image);
+//               wArms.set(exer[0][i].id, workout);
+//               }
+//             }
+//           }
+//         }
+//       }
+
+//   for(let i = 0; i< exer[0].length; i++){
+//     if (abs.includes(exer[0][i].id)) {
+//       for (let k = 0; k < exer[1].length; k++) {
+//         if ((exer[0][i].id == exer[1][k].exercise)) {
+
+//           let wId = exer[0][i].id;
+//           let wVal = wLegs.get(wId)
+//           if (wVal) {
+
+//             wVal["image"].push(exer[1][k].image);
+
+//           } else {
+
+//             let workout = {};
+//             workout.id = exer[0][i].id;
+//             workout.name = exer[0][i].name;
+//             workout.image = [];
+//             workout.description = exer[0][i].description;
+//             workout.image.push(exer[1][k].image);
+//             wAbs.set(exer[0][i].id, workout);
+//             }
+//           }
+//         }
+//       }
+//     }
+
+//     for(let i = 0; i< exer[0].length; i++){
+//       if (chest.includes(exer[0][i].id)) {
+//         for (let k = 0; k < exer[1].length; k++) {
+//           if ((exer[0][i].id == exer[1][k].exercise)) {
+
+//             let wId = exer[0][i].id;
+//             let wVal = wLegs.get(wId)
+//             if (wVal) {
+
+//               wVal["image"].push(exer[1][k].image);
+
+//             } else {
+
+//               let workout = {};
+//               workout.id = exer[0][i].id;
+//               workout.name = exer[0][i].name;
+//               workout.image = [];
+//               workout.description = exer[0][i].description;
+//               workout.image.push(exer[1][k].image);
+//               wChest.set(exer[0][i].id, workout);
+//               }
+//             }
+//           }
+//         }
+//       }
+
+//   for(let i = 0; i< exer[0].length; i++){
+//     if (back.includes(exer[0][i].id)) {
+//       for (let k = 0; k < exer[1].length; k++) {
+//         if ((exer[0][i].id == exer[1][k].exercise)) {
+//           let wId = exer[0][i].id;
+//           let wVal = wLegs.get(wId)
+//               if (wVal) {
+
+//                 wVal["image"].push(exer[1][k].image);
+
+//               } else {
+
+//                 let workout = {};
+//                 workout.id = exer[0][i].id;
+//                 workout.name = exer[0][i].name;
+//                 workout.image = [];
+//                 workout.description = exer[0][i].description;
+//                 workout.image.push(exer[1][k].image);
+//                 wBack.set(exer[0][i].id, workout);
+//                 }
+//               }
+//             }
+//           }
+//         }
+
+//         for(let i = 0; i< exer[0].length; i++){
+//           if (shoulders.includes(exer[0][i].id)) {
+//             for (let k = 0; k < exer[1].length; k++) {
+//               if ((exer[0][i].id == exer[1][k].exercise)) {
+
+//                 let wId = exer[0][i].id;
+//                 let wVal = wLegs.get(wId)
+//                 if (wVal) {
+
+//                   wVal["image"].push(exer[1][k].image);
+
+//                 } else {
+
+//                   let workout = {};
+//                   workout.id = exer[0][i].id;
+//                   workout.name = exer[0][i].name;
+//                   workout.image = [];
+//                   workout.description = exer[0][i].description;
+//                   workout.image.push(exer[1][k].image);
+//                   wShoulders.set(exer[0][i].id, workout);
+//                   }
+//                 }
+//               }
+//             }
+//           }
+
+//           console.log(wLegs(1));
+        //   console.log(wArms);
+        //   console.log(wAbs);
+        //   console.log(wChest);
+        //   console.log(wBack);
+        //   console.log(wShoulders);

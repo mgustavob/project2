@@ -13,13 +13,18 @@
     <div>
 
     <% if(ls1.includes(e.id)) { %>
-       <h3>
-        <%= e.name  %>
-        <div id="descrip">
-            <%= strip_html_tags(e.description) %>
+       <div> <h2>
 
-        </div>
-        <div>
+            <%= e.name  %>
+
+        </h2></div>
+
+
+    <h3>
+                <div id="descrip">
+                    <%= strip_html_tags(e.description) %>
+                </div>
+                    <div>
             <% image.forEach(i => { %>
                 <% if(e.id == i.exercise) { %>
                     <div class="image-exer">

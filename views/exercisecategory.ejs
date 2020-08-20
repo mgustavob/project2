@@ -1,12 +1,36 @@
+<% function strip_html_tags(str) {
+    if ((str===null) || (str===''))
+        return false;
+   else
+    str = str.toString();
+   return str.replace(/<[^>]*>/g, '');
+ } %>
+
+
+<% const ls1 = [113, 191, 116, 154, 117, 118, 177, 130, 111, 88, 74, 81, 129, 82, 83, 84, 86, 138, 193, 195, 91, 125, 93, 176, 192, 97, 98, 100, 122, 163, 109, 110, 181, 128, 143, 161, 106, 148, 119, 123, 152, 150, 151] %>
+
+
 <h1>Exercise Categories</h1>
+Select Category:
+<select name="" id="">
+<% for(let i = 0; i < exer[2].length; i++) { %>
 
-<% for(let i = 0; i < exer[2].length; i++) {%>
-<div>
+    <option value="<%= exer[2][i].category %>">
+         <%= exer[2][i].name %>
+    </option>
 
-    <a href="/exercise/list/<%= exer[2][i].id %>">
-        <h2> <%= exer[2][i].name %> </h2>
-    </a>
+    <% } %>
+</select>
 
-</div>
+Select Exercise
+<select name="" id="">
+    <% for(let j = 0; j < exer[0].length; j++) { %>
+        <% if (ls1.includes(exer[0][j].id)) { %>
+            <option value="<%= exer[0][j].name %>">
+                <%= exer[0][j].name %>
+            </option>
 
-<% } %>
+        <% } %>
+
+    <% } %>
+</select>
