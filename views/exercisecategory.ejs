@@ -1,0 +1,12 @@
+<h1>Exercise Categories</h1>
+
+<% for(let i = 0; i < exer[2].length; i++) {%>
+<div>
+
+    <a href="/exercise/list/<%= exer[2][i].id %>">
+        <h2> <%= exer[2][i].name %> </h2>
+    </a>
+
+</div>
+
+<% } %>

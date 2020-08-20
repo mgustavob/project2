@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Auth App</title>
+    <title>Workout Bot</title>
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
@@ -14,7 +14,7 @@
           <% if (!currentUser) { %>
             <li><a href="/auth/signup">Sign up</a></li>
             <li><a href="/auth/login">Login</a></li>
-            <li><a href="/legs">Legs</a> </li>
+            <li><a href="/exercise">New Workout</a> </li>
           <% } else { %>
             <li><a href="/auth/logout">Logout</a></li>
             <li><a href="/profile">Profile</a></li>
@@ -22,7 +22,7 @@
         </ul>
       </nav>
     </header>
-    <h1>Auth App</h1>
+    <h1>Workout Bot</h1>
     <%- body %>
   </body>
 </html>

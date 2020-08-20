@@ -1,0 +1,46 @@
+<% function strip_html_tags(str) {
+   if ((str===null) || (str===''))
+       return false;
+  else
+   str = str.toString();
+  return str.replace(/<[^>]*>/g, '');
+} %>
+<h1>Exercises</h1>
+
+<% const ls1 = [113, 191, 116, 154, 117, 118, 177, 130, 111, 88, 74, 81, 129, 82, 83, 84, 86, 138, 193, 195, 91, 125, 93, 176, 192, 97, 98, 100, 122, 163, 109, 110, 181, 128, 143, 161, 106, 148, 119, 123, 152, 150, 151] %>
+
+<% exer.forEach(e => { %>
+    <div>
+
+    <% if(ls1.includes(e.id)) { %>
+       <h3>
+        <%= e.name  %>
+        <div id="descrip">
+            <%= strip_html_tags(e.description) %>
+
+        </div>
+        <div>
+            <% image.forEach(i => { %>
+                <% if(e.id == i.exercise) { %>
+                    <div class="image-exer">
+                        <img src="<%= i.image %>" alt="Image Here">
+                    </div>
+                <% } %>
+
+
+           <% }) %>
+        </div>
+       </h3>
+    <% } %>
+
+
+    </div>
+
+    <script>
+
+
+
+    </script>
+
+
+<% }) %>
