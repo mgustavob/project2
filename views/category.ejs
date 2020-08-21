@@ -1,0 +1,10 @@
+<h1>Exerise Categories</h1>
+
+<% categories.results.forEach(c => { %>
+    <% if (c.id != 14) { %>
+        <div>
+            <h2><%= c.name %> </h2>
+            <a href="/exercise/list/<%= c.id %> "><button type="submit">See exercises</button></a>
+        </div>
+    <% } %>
+<% }) %>

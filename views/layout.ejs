@@ -4,12 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Workout Bot</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
     <% include partials/alerts %>
     <header>
-      <nav>
+      <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
         <ul>
           <% if (!currentUser) { %>
             <li><a href="/auth/signup">Sign up</a></li>
@@ -18,7 +19,8 @@
           <% } else { %>
             <li><a href="/auth/logout">Logout</a></li>
             <li><a href="/profile">Profile</a></li>
-            <li><a href="/exercise">New Workout</a> </li>
+            <li><a href="/workout">My Workouts</a></li>
+            <li><a href="/exercise">New Exercise</a> </li>
           <% } %>
         </ul>
       </nav>

@@ -76,6 +76,8 @@ app.get('/profile', isLoggedIn, (req, res) => {
 
 app.use('/auth', require('./routes/auth'));
 app.use('/exercise', require('./routes/exercise'));
+app.use('/workout', require('./routes/workout'));
+
 
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {

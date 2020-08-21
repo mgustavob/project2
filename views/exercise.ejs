@@ -1,58 +1,44 @@
 <% function strip_html_tags(str) {
-   if ((str===null) || (str===''))
-       return false;
-  else
-   str = str.toString();
-  return str.replace(/<[^>]*>/g, '');
-} %>
-<h1>Exercises</h1>
+    if ((str===null) || (str===''))
+        return false;
+   else
+    str = str.toString();
+   return str.replace(/<[^>]*>/g, '');
+ } %>
+
 
 <% const ls1 = [113, 191, 116, 154, 117, 118, 177, 130, 111, 88, 74, 81, 129, 82, 83, 84, 86, 138, 193, 195, 91, 125, 93, 176, 192, 97, 98, 100, 122, 163, 109, 110, 181, 128, 143, 161, 106, 148, 119, 123, 152, 150, 151] %>
 
+
+<h2>Exercises</h2>
+
+
+
 <% exer.forEach(e => { %>
-    <div>
-
     <% if(ls1.includes(e.id)) { %>
-       <div> <h2>
+    <div class='exercise'>
+        <h3><%= e.name %></h3>
+        <p><%= strip_html_tags(e.description) %> </p>
+        <img src="" alt="">
 
-            <%= e.name  %>
 
-        </h2></div>
-
-
-    <h3>
-                <div id="descrip">
-                    <%= strip_html_tags(e.description) %>
-                </div>
-                    <div>
+        <div>
             <% image.forEach(i => { %>
                 <% if(e.id == i.exercise) { %>
                     <div class="image-exer">
                         <img src="<%= i.image %>" alt="Image Here">
                     </div>
                 <% } %>
-
-
            <% }) %>
-           <form action="/workout" method="GET">
+        </div>
+
+        <form action="/workout" method="GET">
 
             Number of Sets: <input type="text" name="set" placeholder="number of Sets">
             Repetitions: <input type="text" name="reps" placeholder="how many Repetitions">
-            <button type="submit">Add to Workkout</button>
+            <button type="submit">Add to workout</button>
 
-           </form>
-        </div>
-       </h3>
-    <% } %>
-
-
+        </form>
     </div>
-
-    <script>
-
-
-
-    </script>
-
-
+    <% } %>
 <% }) %>

@@ -1,7 +1,8 @@
-nav ul li {
+ul li {
   text-decoration: none;
   display: inline-block;
   margin-right: .3em;
+  font-size: 30px;
 }
 
 h1 {
@@ -10,4 +11,17 @@ h1 {
 
 img {
   width: 200px;
+}
+
+nav {
+  color: black;
+}
+
+li:hover {
+  color: black;
+}
+
+.exercise {
+  border: 2px solid darkgreen;
+  
 }

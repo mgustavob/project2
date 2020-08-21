@@ -1,3 +1,17 @@
 <h2>Homepage</h2>
 
+<% if (!currentUser) { %>
+    <h3>Please Sign Up or Log In</h3>
 
+  <% } else { %>
+
+    <h3>
+        Welcome
+        <form action="/workout" method="GET">
+
+            Workout Name: <input type="text" name="wName" placeholder="Workout Name">
+            <button type="submit">Create Workout</button>
+
+        </form>
+    </h3>
+  <% } %>

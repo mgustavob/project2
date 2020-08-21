@@ -23,13 +23,12 @@ let promiseArray = urlArray.map(url => axios.get(url)); // or whatever
 
 router.get('/', (req, res)=> {
 
-    axios.all(promiseArray)
+    axios.get(urlArray[2])
     // 0  is exercise, 1 is image
-    .then(function(results) {
-      const exer = results.map(r => r.data);
-
-
-      res.render('exercisecategory', { exer })
+    .then(results => {
+    //   console.log(results.data)
+        let categories = results.data
+        res.render('category', { categories})
 
 
     })
@@ -41,16 +40,16 @@ router.get('/', (req, res)=> {
 router.get('/list/:id', (req, res)=>{
     console.log(req.params.id)
     let cat =req.params.id
-    axios.get(`https://wger.de/api/v2/exercise/?language=2&category=${cat}`)
+    axios.get(`https://wger.de/api/v2/exercise/?language=2&category=${cat}&limit=1000`)
     .then(results =>{
-        const exer = results.data
-        // console.log(exer)
-        axios.get("https://wger.de/api/v2/exerciseimage/")
-        .then(resp => {
-            const image = resp.data
-            console.log(image)
+        const exer = results.data.results
 
-            res.render('exerciselist', { exer, image })
+        // console.log(exer1)
+        axios.get(`https://wger.de/api/v2/exerciseimage/?language=2&category=${cat}&limit=1000`)
+        .then(resp => {
+            const image = resp.data.results
+
+            res.render('exercise', { exer, image })
         })
         .catch(err => {
             console.log(err);

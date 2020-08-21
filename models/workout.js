@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       models.workout.belongsTo(models.user)
+      models.workout.hasMany(models.exercise)
     }
   };
   workout.init({
@@ -25,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
       max: 50
       }
     },
-    repet: {
+    repetition: {
       type: DataTypes.INTEGER,
       validate: {
       min: 1,
