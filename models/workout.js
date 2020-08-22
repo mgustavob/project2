@@ -10,31 +10,17 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
       models.workout.belongsTo(models.user)
       models.workout.hasMany(models.exercise)
+
+      // define association here
     }
   };
   workout.init({
     name: DataTypes.STRING,
-    workoutId: DataTypes.INTEGER,
-    exerciseName: DataTypes.STRING,
-    set: {
-      type: DataTypes.INTEGER,
-      validate: {
-      min: 1,
-      max: 50
-      }
-    },
-    repetition: {
-      type: DataTypes.INTEGER,
-      validate: {
-      min: 1,
-      max: 50
-      }
-    },
+    userId: DataTypes.INTEGER,
+    description: DataTypes.TEXT
 
-    category: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'workout',

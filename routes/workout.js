@@ -9,14 +9,13 @@ const { route } = require('./auth');
 //
 router.get('/', (req, res) => {
     console.log(req.body);
-    db.workout.findOrCreate({
+    db.exercise.findOrCreate({
       where: { name: req.body.name },
       defaults: {
         name: req.body.name,
         set: req.body.set,
-        repet: req.body.repet,
+        repetition: req.body.repet,
         exerciseName: req.body.exercise,
-        category: req.body.category
       }
     })
     .then(([workout, created]) => {
