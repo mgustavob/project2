@@ -65,17 +65,9 @@ app.get('/profile', isLoggedIn, (req, res) => {
   res.render('profile');
 });
 
-// app.get('/exercise', (req, res) => {
-//   axios.get('https://wger.de/api/v2/exercise/?language=2')
-//   .then(resp => {
-//     let exercise = resp.data;
-//     let category = req.query.category;
-//     console.log(category);
-// })
-// })
+
 
 app.use('/auth', require('./routes/auth'));
-app.use('/exercise', require('./routes/exercise'));
 app.use('/workout', require('./routes/workout'));
 
 

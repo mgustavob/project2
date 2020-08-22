@@ -26,7 +26,7 @@ router.post('/signup', (req, res) => {
       console.log(`${user.name} was created`);
       // FLASH MESSAGE
       passport.authenticate('local', {
-        successRedirect: '/',
+        successRedirect: '/workout',
         successFlash: 'Account created and logging in'
       })(req, res);
       // before passport authenicate
@@ -48,7 +48,7 @@ router.post('/signup', (req, res) => {
 
 // FLASH MESSAGE
 router.post('/login', passport.authenticate('local', {
-  successRedirect: '/',
+  successRedirect: '/workout',
   failureRedirect: '/auth/login',
   successFlash: 'Welcome back.',
   failureFlash: 'Either email or password is incorrect. Please try again.'

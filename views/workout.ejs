@@ -1,8 +1,37 @@
-<h3>
-    <form action="/workout" method="GET">
+<div>
+    <h2>Create a new Workout</h2>
+        <form action="/workout" method="POST">
 
-        Workout Name: <input type="text" name="wName" placeholder="Workout Name">
-        <button type="submit">Create Workout</button>
+            Workout Name: <input type="text" name="name" placeholder="Workout Name">
+            <input type="text" name="description" placeholder="describe your workout">
+            <button type="submit">Create Workout</button>
 
-    </form>
-</h3>
+        </form>
+
+
+</div>
+
+<div>
+    <h2>My Workouts</h2>
+    <% workouts.forEach(w => { %>
+        <div>
+            <h3><%= w.name %> </h3>
+            <p><%= w.description %> </p>
+            <div>
+                <h4>Exercises</h4>
+                <% w.exercises.forEach(e => { %>
+                    <div>
+                        <h5><%= e.exerciseName %></h5>
+                        <p>Reps: <%= e.repetition %> </p>
+                        <p>Sets: <%= e.sets %> </p>
+                    </div>
+                <% }) %>
+            </div>
+            <a href="/workout/<%= w.id %>">
+                <button type="submit">add exercises</button>
+            </a>
+        </div>
+    <% }) %>
+
+
+</div>

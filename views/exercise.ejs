@@ -32,10 +32,12 @@
            <% }) %>
         </div>
 
-        <form action="/workout" method="GET">
+        <form action="/workout/<%= workoutId %> " method="POST">
 
-            Number of Sets: <input type="text" name="set" placeholder="number of Sets">
-            Repetitions: <input type="text" name="reps" placeholder="how many Repetitions">
+            Number of Sets: <input type="text" name="sets" placeholder="number of Sets" required>
+            Repetitions: <input type="text" name="repetition" placeholder="how many Repetitions" required>
+            <input type="hidden" name="exerciseApiId" value="<%= e.id %> ">
+            <input type="hidden" name="exerciseName" value="<%= e.name %> ">
             <button type="submit">Add to workout</button>
 
         </form>

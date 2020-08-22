@@ -4,7 +4,12 @@
     <% if (c.id != 14) { %>
         <div>
             <h2><%= c.name %> </h2>
-            <a href="/exercise/list/<%= c.id %> "><button type="submit">See exercises</button></a>
+            <form action="/workout/<%= workoutId %> /category" method="POST">
+                <input type="hidden" name="categoryId" value="<%= c.id %>">
+                <button type="submit">See exercises</button>
+
+
+            </form>
         </div>
     <% } %>
 <% }) %>

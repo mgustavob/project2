@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
   exercise.init({
     exerciseApiId: DataTypes.INTEGER,
     exerciseName: DataTypes.STRING,
-    set: {
+    sets: {
       type: DataTypes.INTEGER,
       validate: {
         min: 1,

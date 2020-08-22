@@ -14,7 +14,7 @@ module.exports = {
       exerciseName: {
         type: Sequelize.STRING
       },
-      set: {
+      sets: {
         type: Sequelize.INTEGER
       },
       repetition: {
