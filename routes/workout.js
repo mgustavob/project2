@@ -2,7 +2,7 @@ let router = require('express').Router();
 let db = require('../models');
 const axios = require('axios');
 let methodOverride = require('method-override');
-router.use(methodOverride('_method'));
+// router.use(methodOverride('_method'));
 
 let urlArray = [ "https://wger.de/api/v2/exercise/?language=2","https://wger.de/api/v2/exerciseimage/", "https://wger.de/api/v2/exercisecategory/"] // unknown # of urls (1 or more)
 
@@ -113,8 +113,34 @@ router.post('/:id', (req, res) => {
     });
   });
 
+  router.delete('/:id', (req, res) => {
+    let wId = req.params.id;
+    // console.log('🤦🏻‍♀️🤦🏻‍♀️',wId);
+    db.workout.destroy({
+      where: { id: wId }
+    })
+    .then(()=> {
+      db.workout.findAll({
+        where: { userId: req.user.id },
+        include: [ db.user, db.exercise]
+      })
+      .then(workouts => {
+        res.render('workout', { workouts })
+      })
+      .catch(err =>{
+        console.log(err);
+      })
+    })
+      .catch(err =>{
+        console.log(err);
+    })
+  })
 
-
+router.get('/details/:id', (req, res) =>{
+  let wId = req.params.id;
+  console.log('🤦🏻‍♀️🤦🏻‍♀️',wId);
+  res.render('details', { wId } )
+})
 
 
 

@@ -23,5 +23,43 @@ li:hover {
 
 .exercise {
   border: 2px solid darkgreen;
-  
+
+}
+
+.wcontainer {
+  width: 800px;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  background-color: aqua;
+  margin: 0 auto;
+}
+
+.econtainer {
+  border-style: inset;
+  border-color: black;
+  border-width: 2px 0 2px 2px;
+}
+
+.etitle {
+  border-style: inset;
+  border-color: black;
+  border-width: 3px 0;
+  background-color: aqua;
+  text-align: center;
+}
+
+.b-options {
+  /* position: fixed; */
+}
+
+.bcontainer button {
+  display: block;
+
+}
+
+.bcontainer {
+  background-color: aqua;
+  border-style: inset;
+  border-color: black;
+  border-width: 0 2px 2px 0;
 }

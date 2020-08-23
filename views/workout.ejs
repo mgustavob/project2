@@ -11,26 +11,33 @@
 
 </div>
 
-<div>
-    <h2>My Workouts</h2>
+<h2>My Workouts</h2>
+    <div class="wcontainer">
+
     <% workouts.forEach(w => { %>
-        <div>
-            <h3><%= w.name %> </h3>
-            <p><%= w.description %> </p>
-            <div>
+        <div style="background-color: white;"></div>
+        <div class="econtainer">
+            <h3 class="etitle"><%= w.name %> </h3>
+            <h4><%= w.description %> </h2>
+            <br>
                 <h4>Exercises</h4>
                 <% w.exercises.forEach(e => { %>
-                    <div>
                         <h5><%= e.exerciseName %></h5>
                         <p>Reps: <%= e.repetition %> </p>
                         <p>Sets: <%= e.sets %> </p>
-                    </div>
+                    <br>
                 <% }) %>
+
             </div>
-            <a href="/workout/<%= w.id %>">
-                <button type="submit">add exercises</button>
-            </a>
-        </div>
+                    <div class="bcontainer">
+                        <a href="/workout/<%= w.id %>">
+                            <button type="submit">add exercises</button> </a>
+                        <a href="/workout/details/<%= w.id %>">
+                            <button type="submit">Workout Details</button> </a>
+                            <form action="/workout/<%= w.id %>?_method=DELETE" method="POST">
+                                <button type="submit" name="id" value="<%= w.id %>">Delete Workout</button>
+                            </form>
+                    </div>
     <% }) %>
 
 
