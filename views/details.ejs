@@ -1,19 +1,22 @@
 <h1>Workout Details</h1>
 
 <h1><%= wName %> </h1>
-<% workout.forEach(e => { %>
-    <div><h2>
-        Exercise name: <%= e.dataValues.exerciseName %>
-        Number of Sets: <%= e.dataValues.sets %>
-        Repetitions: <%= e.dataValues.repetition %>
-        <form action="/workout/details/<%= e.dataValues.workoutId %>/<%= wName %>?_method=PUT" method="POST">
+<div class="wcontainer">
+    <% workout.forEach(e => { %>
+        <div class="econtainer"><h2>
+            Exercise name: <%= e.dataValues.exerciseName %>
+            Number of Sets: <%= e.dataValues.sets %>
+            Repetitions: <%= e.dataValues.repetition %>
+            <form action="/workout/details/<%= e.dataValues.workoutId %>/<%= wName %>?_method=PUT" method="POST">
 
-            Number of Sets: <input type="text" name="sets" placeholder="number of Sets" required>
-            Repetitions: <input type="text" name="repetition" placeholder="how many Repetitions" required>
-            <input type="hidden" name="exerciseId" value="<%= e.id %> ">
-            <input type="hidden" name="wName" value="<%= wName %> ">
-            <button type="submit">Update Workout</button>
+                Number of Sets: <input type="text" name="sets" placeholder="number of Sets" required>
+                Repetitions: <input type="text" name="repetition" placeholder="how many Repetitions" required>
+                <input type="hidden" name="exerciseId" value="<%= e.id %> ">
+                <input type="hidden" name="wName" value="<%= wName %> ">
+                <button type="submit">Update Workout</button>
 
-        </form>
-    </h2></div>
-    <% }) %>
+            </form>
+        </h2></div>
+        <% }) %>
+
+</div>

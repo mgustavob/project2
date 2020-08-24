@@ -15,31 +15,30 @@
     <div class="wcontainer">
 
     <% workouts.forEach(w => { %>
-        <div style="background-color: white;"></div>
         <div class="econtainer">
             <h3 class="etitle"><%= w.name %> </h3>
-            <h4><%= w.description %> </h2>
-            <br>
-                <h4>Exercises</h4>
-                <% w.exercises.forEach(e => { %>
-                        <h5><%= e.exerciseName %></h5>
-                        <p>Reps: <%= e.repetition %> </p>
-                        <p>Sets: <%= e.sets %> </p>
-                    <br>
+            <div>
+                <h4><%= w.description %> </h4>
+            </div>
+
+            <h4>Exercises</h4>
+            <% w.exercises.forEach(e => { %>
+                <h5><%= e.exerciseName %></h5>
+                <p>Reps: <%= e.repetition %> </p>
+                <p>Sets: <%= e.sets %> </p>
                 <% }) %>
 
-            </div>
-                    <div class="bcontainer">
-                        <a href="/workout/<%= w.id %>">
-                            <button type="submit">add exercises</button> </a>
+                <div class="bcontainer">
+                    <a href="/workout/<%= w.id %>">
+                        <button type="submit">add exercises</button> </a>
                         <a href="/workout/details/<%= w.id %>/<%= w.name %>">
                             <button type="submit">Edit Workout</button>
                         </a>
-                            <form action="/workout/<%= w.id %>?_method=DELETE" method="POST">
-                                <button type="submit" name="id" value="<%= w.id %>">Delete Workout</button>
-                            </form>
+                        <form action="/workout/<%= w.id %>?_method=DELETE" method="POST">
+                            <button type="submit" name="id" value="<%= w.id %>">Delete Workout</button>
+                        </form>
                     </div>
-    <% }) %>
-
-
+            </div>
+                    <% }) %>
 </div>
+<div class="endspace"></div>

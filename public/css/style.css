@@ -1,3 +1,6 @@
+body {
+  background-color: lightyellow;
+}
 ul li {
   text-decoration: none;
   display: inline-block;
@@ -32,45 +35,56 @@ li:hover {
 .wcontainer {
   width: 800px;
   display: grid;
-  grid-template-columns: 1fr 5fr 1fr;
-  background-color: aqua;
+  grid-template-columns: 1fr 1fr;
   margin: 0 auto;
+  border-bottom-width: 10px;
 }
 
 .econtainer {
   border-style: inset;
   border-color: black;
-  border-width: 2px 0 2px 2px;
+  border-width: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: yellow;
 }
 
 .etitle {
+  width: 400px;
   border-style: inset;
   border-color: black;
-  border-width: 3px 0;
-  background-color: aqua;
+  border-width: 4px 2px 4px 2px;
+  background-color: orange;
   text-align: center;
 }
 
 .b-options {
-  /* position: fixed; */
+  background-color: orange;
 }
 
-.bcontainer button {
+/* .bcontainer button {
   display: block;
-
-}
+} */
 
 .bcontainer {
-  background-color: aqua;
-  border-style: inset;
-  border-color: black;
-  border-width: 0 2px 2px 0;
+  background-color: yellow;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+
 }
 
 #container-exercise {
   width: 800px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background-color: aqua;
+  background-color: white;
   margin: 0 auto;
+}
+
+.endspace {
+  height: 60px;
 }
