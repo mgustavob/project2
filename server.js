@@ -80,20 +80,4 @@ const server = app.listen(port, () => {
 module.exports = server;
 
 
-// this is the code I used to find the arrays for legs, arms, chest, etc
-  // for (let i = 0; i < exer[0].length; i++) {
-  //   // if (exer[1]) {
 
-  //     if (exer[0][i].category == 9) {
-  //     // console.log(`name: ${exer[0][i].name}💃🏻ID: ${exer[0][i].id}`);
-
-  //       for (let j = 0; j<exer[1].length; j++) {
-  //         if (exer[1][j].exercise == exer[0][i].id) {
-  //           console.log(`name: ${exer[0][i].name}💃🏻ID: ${exer[0][i].id} 🙈Image:${exer[1][j].image}`);
-  //           total += 1;
-  //         }
-  //       }
-
-  // // }
-  // }}
-  // console.log(total)
