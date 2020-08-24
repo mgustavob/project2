@@ -23,7 +23,10 @@ li:hover {
 
 .exercise {
   border: 2px solid darkgreen;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .wcontainer {
@@ -62,4 +65,12 @@ li:hover {
   border-style: inset;
   border-color: black;
   border-width: 0 2px 2px 0;
+}
+
+#container-exercise {
+  width: 800px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: aqua;
+  margin: 0 auto;
 }

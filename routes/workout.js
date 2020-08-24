@@ -13,7 +13,7 @@ let promiseArray = urlArray.map(url => axios.get(url)); // or whatever
 //
 
 router.get('/', (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     db.workout.findAll({
       where: { userId: req.user.id },
       include: [ db.user, db.exercise]
@@ -136,12 +136,47 @@ router.post('/:id', (req, res) => {
     })
   })
 
-router.get('/details/:id', (req, res) =>{
-  let wId = req.params.id;
-  console.log('🤦🏻‍♀️🤦🏻‍♀️',wId);
-  res.render('details', { wId } )
-})
+router.get('/details/:id/:name', (req, res) =>{
+  // let wId = req.params.id;
+  let wName = req.params.name;
+  // console.log('🤦🏻‍♀️🤦🏻‍♀️',wId);
+  db.exercise.findAll({
+    where: { workoutId: req.params.id }})
+  .then(workout => {
+    // console.log('🤦🏻‍♀️🤦🏻‍♀️', workout[1].dataValues.exerciseName);
+      res.render('details', { workout, wName });
+    })
+    .catch(err => {
+      console.log(err);
+    })
+  })
 
+
+
+router.put('/details/:id/:name', (req, res) =>{
+  let wName = req.body.wName;
+  db.exercise.update({
+      sets: req.body.sets,
+      repetition: req.body.repetition
+    }, {
+      where: { id: req.body.exerciseId }
+    }
+  )
+  .then(exercise =>{
+    // console.log('🐽🐽',exercise)
+    db.exercise.findAll({
+      where: { workoutId: req.params.id }})
+      .then(workout => {
+          res.render('details', { workout, wName });
+        })
+      .catch(err => {
+        console.log(err);
+      })
+    })
+    .catch(err => {
+      console.log(err);
+    })
+})
 
 
 

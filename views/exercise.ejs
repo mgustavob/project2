@@ -13,34 +13,39 @@
 <h2>Exercises</h2>
 
 
+<div id="container-exercise">
+    <% exer.forEach(e => { %>
+        <% if(ls1.includes(e.id)) { %>
+        <div class='exercise'>
+            <div>
+                <h3><%= e.name %></h3>
+                <p><%= strip_html_tags(e.description) %> </p>
+                <div>
+                    <% image.forEach(i => { %>
+                        <% if(e.id == i.exercise) { %>
+                            <div class="image-exer">
+                                <img src="<%= i.image %>" alt="Image Here">
+                            </div>
+                        <% } %>
+                   <% }) %>
+                </div>
 
-<% exer.forEach(e => { %>
-    <% if(ls1.includes(e.id)) { %>
-    <div class='exercise'>
-        <h3><%= e.name %></h3>
-        <p><%= strip_html_tags(e.description) %> </p>
-        <img src="" alt="">
+            </div>
 
 
-        <div>
-            <% image.forEach(i => { %>
-                <% if(e.id == i.exercise) { %>
-                    <div class="image-exer">
-                        <img src="<%= i.image %>" alt="Image Here">
-                    </div>
-                <% } %>
-           <% }) %>
+            <div>
+                <form action="/workout/<%= workoutId %> " method="POST">
+
+                    Number of Sets: <input type="text" name="sets" placeholder="number of Sets" required>
+                    Repetitions: <input type="text" name="repetition" placeholder="how many Repetitions" required>
+                    <input type="hidden" name="exerciseApiId" value="<%= e.id %> ">
+                    <input type="hidden" name="exerciseName" value="<%= e.name %> ">
+                    <button type="submit">Add to workout</button>
+
+                </form>
+
+            </div>
         </div>
-
-        <form action="/workout/<%= workoutId %> " method="POST">
-
-            Number of Sets: <input type="text" name="sets" placeholder="number of Sets" required>
-            Repetitions: <input type="text" name="repetition" placeholder="how many Repetitions" required>
-            <input type="hidden" name="exerciseApiId" value="<%= e.id %> ">
-            <input type="hidden" name="exerciseName" value="<%= e.name %> ">
-            <button type="submit">Add to workout</button>
-
-        </form>
-    </div>
-    <% } %>
-<% }) %>
+        <% } %>
+    <% }) %>
+</div>

@@ -32,8 +32,9 @@
                     <div class="bcontainer">
                         <a href="/workout/<%= w.id %>">
                             <button type="submit">add exercises</button> </a>
-                        <a href="/workout/details/<%= w.id %>">
-                            <button type="submit">Workout Details</button> </a>
+                        <a href="/workout/details/<%= w.id %>/<%= w.name %>">
+                            <button type="submit">Edit Workout</button>
+                        </a>
                             <form action="/workout/<%= w.id %>?_method=DELETE" method="POST">
                                 <button type="submit" name="id" value="<%= w.id %>">Delete Workout</button>
                             </form>
