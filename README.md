@@ -13,7 +13,11 @@ Requires:
 
 ## User Experience
 
-The user will log in and be able to create a Workout and add exercises based on an API call
+1. The user will log in and be able to create a Workout
+2. After than he will be able to add exercises based on a category
+3. Add that exercise with sets, and repetitions
+4. User will be able to modify sets and repetitions on the website
+5. User will be able to delete the workout
 
 ### Main Challege
 
