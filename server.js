@@ -26,8 +26,6 @@ app.use(methodOverride('_method'));
 
 
 
-
-
 // secret: What we actually giving the user to use our site / session cookie
 // resave: Save the session even if it's modified, make this false
 // saveUninitialized: if we have a new session, we'll save it, therefore,
@@ -77,7 +75,8 @@ const server = app.listen(port, () => {
   console.log(`🎧 You're listening to the smooth sounds of port ${port} 🎧`);
 });
 
+app.get('*', (req, res) => {
+  res.render('error')
+})
+
 module.exports = server;
-
-
-
